@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CogniSphere Privacy Policy</title>
+  <meta name="description" content="CogniSphere privacy policy in Traditional Chinese, English, and Japanese.">
+  <style>
+    :root {
+      --bg: #f4f5f1;
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #172017;
+      --muted: #617065;
+      --line: rgba(28, 73, 49, 0.12);
+      --accent: #1b6d49;
+      --accent-soft: rgba(27, 109, 73, 0.10);
+      --shadow: 0 20px 60px rgba(18, 33, 24, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "SF Pro Text", "PingFang TC", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(27, 109, 73, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(186, 110, 62, 0.08), transparent 22%),
+        linear-gradient(180deg, #f7f8f4 0%, var(--bg) 100%);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .shell {
+      width: min(920px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 32px 0 72px;
+    }
+
+    .hero {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(20px);
+      background: rgba(244, 245, 241, 0.8);
+      border-bottom: 1px solid rgba(23, 32, 23, 0.05);
+    }
+
+    .hero-inner {
+      width: min(920px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 18px 0 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+      line-height: 1.1;
+    }
+
+    .brand p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      gap: 8px;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+    }
+
+    .lang-switcher button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 140ms ease;
+    }
+
+    .lang-switcher button.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .intro {
+      padding: 24px 24px 22px;
+      margin-top: 28px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(27, 109, 73, 0.12);
+    }
+
+    .pill strong,
+    .section h3 {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .policy {
+      display: none;
+      margin-top: 22px;
+      padding: 28px 24px;
+    }
+
+    .policy.active {
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .policy h2 {
+      margin: 0 0 6px;
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      line-height: 1.15;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding-top: 22px;
+      margin-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .section p,
+    .section li {
+      color: #29352c;
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(186, 110, 62, 0.08);
+      border: 1px solid rgba(186, 110, 62, 0.15);
+      color: #5f472f;
+    }
+
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        align-items: flex-start;
+      }
+
+      .lang-switcher {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .lang-switcher button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand">
+        <h1>CogniSphere</h1>
+        <p id="hero-subtitle">Privacy Policy</p>
+      </div>
+      <nav class="lang-switcher" aria-label="Language switcher">
+        <button type="button" data-lang="zh-Hant">繁中</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">日本語</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="card intro">
+      <div data-copy="intro-title"></div>
+      <div class="intro-grid">
+        <div class="pill" data-copy="intro-card-1"></div>
+        <div class="pill" data-copy="intro-card-2"></div>
+        <div class="pill" data-copy="intro-card-3"></div>
+      </div>
+    </section>
+
+    <article class="card policy" data-policy="zh-Hant">
+      <div class="eyebrow">繁體中文</div>
+      <h2>隱私權政策</h2>
+      <p class="summary">CogniSphere 主要在裝置端保存知識內容，並在你主動使用 AI、OCR、PDF 摘要、同步、網站預覽或訂閱驗證功能時，於必要範圍內處理或傳送相關資料。</p>
+      <div class="meta">
+        <span>生效日期：2026 年 3 月 11 日</span>
+        <span>產品：CogniSphere</span>
+      </div>
+
+      <section class="section">
+        <h3>1. 適用範圍</h3>
+        <p>本政策適用於 CogniSphere iPhone、iPad、以及未來相關版本的使用者資料處理方式。若你透過 App Store 下載、安裝、登入、同步、匯入資料、建立知識點或使用 AI / OCR 功能，即表示你已閱讀並理解本政策。</p>
+      </section>
+
+      <section class="section">
+        <h3>2. 我們處理的資料類型</h3>
+        <ul>
+          <li>你建立的知識點、知識網絡名稱、分類、筆記文字、網站連結與使用者自行輸入內容。</li>
+          <li>你選擇加入的圖片、PDF、錄音與其對應的附件索引資訊。</li>
+          <li>你主動觸發的 OCR 結果、PDF 摘要、AI 知識草稿、外部比對說明等衍生內容。</li>
+          <li>為了同步、訂閱驗證、錯誤排查與效能改善而產生的有限診斷與技術資訊。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>3. 何時會傳送資料到外部服務</h3>
+        <p>當你主動使用智慧辨識、圖片 OCR、PDF 摘要、網站預覽、CloudKit 同步或 RevenueCat 訂閱驗證功能時，相關資料可能會傳送至外部服務。這些資料可能包括文字內容、OCR 結果、裁切或縮小後的影像、PDF 擷取文字、同步中繼資料及交易驗證資訊。</p>
+      </section>
+
+      <section class="section">
+        <h3>4. AI 與 OpenAI 相關服務</h3>
+        <p>本產品的部分 AI 功能由應用提供者設定的遠端 AI 服務處理。該服務可能使用 OpenAI 模型或 OpenAI 相容能力分析你提交的文字、圖片與 PDF。你不應在沒有必要且無適當權限的情況下，上傳高度敏感的個人資料、醫療、法律、財務、內部商業資料或其他機密內容。</p>
+      </section>
+
+      <section class="section">
+        <h3>5. Apple、CloudKit 與第三方服務</h3>
+        <p>知識點與知識網絡清單可能透過 Apple CloudKit / iCloud 同步。Apple、RevenueCat 及 AI 服務供應方可能依其角色處理必要資料。除非產品功能另有明確說明，附件實體檔案可能仍僅保留於本機，不會自動跨裝置同步。</p>
+      </section>
+
+      <section class="section">
+        <h3>6. 我們如何使用資料</h3>
+        <ul>
+          <li>提供知識整理、搜尋、圖譜呈現、附件管理與匯出功能。</li>
+          <li>執行 OCR、AI 摘要、知識點建議與使用者可編輯草稿。</li>
+          <li>處理同步、訂閱驗證、付款狀態與必要的技術維運。</li>
+          <li>診斷錯誤、限制濫用、改善產品穩定性與使用體驗。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>7. 保存、刪除與你的控制權</h3>
+        <p>你可以透過刪除知識點、附件、知識網絡或移除 app 來清除大部分本機資料。若資料已同步至 iCloud，刪除可能需要時間傳播至其他裝置與雲端服務。你對自己匯入或處理的內容具有最終責任，並應確認自己具備合法使用與處理權限。</p>
+      </section>
+
+      <section class="section">
+        <h3>8. 兒童、教育與研究使用</h3>
+        <p>若本 app 用於校園、研究、商業或機構情境，你應確保教材、論文、圖片、商品資訊或其他文件的處理符合授權、版權、保密與組織政策要求。若使用者為未成年人，應由家長、監護人或機構依適用法規進行管理。</p>
+      </section>
+
+      <section class="section">
+        <h3>9. 聯絡方式</h3>
+        <p>如對本政策有疑問，請聯繫：<strong>eric1207cvb@msn.com</strong></p>
+      </section>
+
+      <section class="section">
+        <h3>10. 官方外部政策</h3>
+        <ul>
+          <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI 隱私權政策</a></li>
+          <li><a href="https://openai.com/policies/terms-of-use/" target="_blank" rel="noopener noreferrer">OpenAI 使用條款</a></li>
+          <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Apple 標準 EULA</a></li>
+        </ul>
+      </section>
+
+    </article>
+
+    <article class="card policy" data-policy="en">
+      <div class="eyebrow">English (US)</div>
+      <h2>Privacy Policy</h2>
+      <p class="summary">CogniSphere primarily stores knowledge content on your device and only processes or transmits relevant data when you intentionally use AI, OCR, PDF summary, sync, website preview, or subscription-related features.</p>
+      <div class="meta">
+        <span>Effective date: March 11, 2026</span>
+        <span>Product: CogniSphere</span>
+      </div>
+
+      <section class="section">
+        <h3>1. Scope</h3>
+        <p>This Privacy Policy applies to CogniSphere for iPhone, iPad, and related future versions. By downloading, installing, using, syncing, importing content, creating knowledge entries, or using AI / OCR features, you acknowledge that you have read and understood this policy.</p>
+      </section>
+
+      <section class="section">
+        <h3>2. Categories of Data We Handle</h3>
+        <ul>
+          <li>Knowledge entries, knowledge network names, categories, note content, web links, and other information you create or type into the app.</li>
+          <li>Images, PDFs, audio files, and related attachment metadata you choose to add.</li>
+          <li>OCR results, PDF summaries, AI-generated knowledge drafts, and external verification notes triggered by your own actions.</li>
+          <li>Limited technical and diagnostic information needed for sync, subscription checks, product reliability, and troubleshooting.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>3. When Data Is Sent to External Services</h3>
+        <p>If you use Smart Scan, image OCR, PDF summaries, website preview, CloudKit sync, or RevenueCat subscription validation, relevant data may be sent to external services. This may include text, OCR output, cropped or resized images, extracted PDF text, sync metadata, and transaction verification data.</p>
+      </section>
+
+      <section class="section">
+        <h3>4. AI Processing and OpenAI-Related Services</h3>
+        <p>Some AI features are handled by a remote AI service configured by the app provider. That service may use OpenAI models or OpenAI-compatible capabilities to analyze submitted text, images, and PDFs. You should avoid submitting highly sensitive personal, medical, legal, financial, internal business, or confidential information unless you clearly need to do so and have appropriate rights to process it.</p>
+      </section>
+
+      <section class="section">
+        <h3>5. Apple, CloudKit, and Third Parties</h3>
+        <p>Knowledge entries and knowledge network records may sync through Apple CloudKit / iCloud. Apple, RevenueCat, and AI service providers may process limited information as required for their roles. Unless the product explicitly states otherwise, attachment files may remain local and may not automatically sync across devices.</p>
+      </section>
+
+      <section class="section">
+        <h3>6. How We Use Data</h3>
+        <ul>
+          <li>To provide knowledge organization, graph visualization, attachment handling, and export features.</li>
+          <li>To generate OCR output, AI summaries, draft knowledge entries, and user-editable suggestions.</li>
+          <li>To support sync, subscription validation, payment-related status checks, and basic technical operations.</li>
+          <li>To diagnose failures, prevent abuse, and improve product stability and usability.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>7. Retention, Deletion, and Your Controls</h3>
+        <p>You can delete most local data by removing entries, attachments, knowledge networks, or uninstalling the app. If information has already synced through iCloud, deletion may take time to propagate across devices and cloud services. You remain responsible for the content you import, process, or store, and for ensuring that you have the rights to do so.</p>
+      </section>
+
+      <section class="section">
+        <h3>8. Children, Education, and Research Use</h3>
+        <p>If the app is used in school, research, business, or institutional contexts, you should make sure the processing of textbooks, papers, images, product information, or other documents complies with licensing, copyright, confidentiality, and organizational policies. If the user is a minor, appropriate parental, guardian, or institutional supervision may be required under applicable law.</p>
+      </section>
+
+      <section class="section">
+        <h3>9. Contact</h3>
+        <p>For privacy-related questions, contact: <strong>eric1207cvb@msn.com</strong></p>
+      </section>
+
+      <section class="section">
+        <h3>10. External Policy References</h3>
+        <ul>
+          <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI Privacy Policy</a></li>
+          <li><a href="https://openai.com/policies/terms-of-use/" target="_blank" rel="noopener noreferrer">OpenAI Terms of Use</a></li>
+          <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Apple Standard EULA</a></li>
+        </ul>
+      </section>
+
+    </article>
+
+    <article class="card policy" data-policy="ja">
+      <div class="eyebrow">日本語</div>
+      <h2>プライバシーポリシー</h2>
+      <p class="summary">CogniSphere は、主に端末内に知識データを保存し、AI、OCR、PDF 要約、同期、Web プレビュー、購読関連機能をユーザーが自ら利用した場合に限り、必要な範囲で関連データを処理または送信します。</p>
+      <div class="meta">
+        <span>施行日：2026年3月11日</span>
+        <span>製品名：CogniSphere</span>
+      </div>
+
+      <section class="section">
+        <h3>1. 適用範囲</h3>
+        <p>本ポリシーは、CogniSphere の iPhone、iPad、および将来の関連バージョンに適用されます。アプリをダウンロード、インストール、利用、同期、取り込み、知識点の作成、AI / OCR 機能の利用を行うことにより、本ポリシーを読了し、理解したものとみなされます。</p>
+      </section>
+
+      <section class="section">
+        <h3>2. 取り扱うデータの種類</h3>
+        <ul>
+          <li>知識点、知識ネットワーク名、分類、メモ本文、Web リンク、その他ユーザーが入力した情報。</li>
+          <li>ユーザーが追加した画像、PDF、音声、およびそれらに紐づく添付メタデータ。</li>
+          <li>ユーザーの操作により生成される OCR 結果、PDF 要約、AI 草稿、外部照合メモ等の派生情報。</li>
+          <li>同期、購読確認、安定運用、障害解析に必要な最小限の技術情報および診断情報。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>3. 外部サービスへ送信される場面</h3>
+        <p>スマート認識、画像 OCR、PDF 要約、Web プレビュー、CloudKit 同期、RevenueCat による購読確認を利用する場合、必要なデータが外部サービスへ送信されることがあります。これには、文字列、OCR 出力、切り抜き画像、縮小画像、PDF 抽出テキスト、同期メタデータ、取引確認情報等が含まれます。</p>
+      </section>
+
+      <section class="section">
+        <h3>4. AI 処理と OpenAI 関連サービス</h3>
+        <p>本アプリの一部 AI 機能は、アプリ提供者が設定した遠隔 AI サービスによって処理されます。そのサービスは、OpenAI モデルまたは OpenAI 互換機能を利用して、送信されたテキスト、画像、PDF を解析する場合があります。高い機密性を有する個人情報、医療、法務、財務、社内情報などは、必要性と処理権限を十分確認したうえで扱ってください。</p>
+      </section>
+
+      <section class="section">
+        <h3>5. Apple、CloudKit、および第三者</h3>
+        <p>知識点と知識ネットワークの記録は、Apple CloudKit / iCloud を通じて同期される場合があります。Apple、RevenueCat、AI サービス提供者は、それぞれの役割に応じて必要最小限の情報を処理します。製品内で明示されていない限り、添付ファイル本体は端末内のみに保存され、自動で他端末へ同期されない場合があります。</p>
+      </section>
+
+      <section class="section">
+        <h3>6. データの利用目的</h3>
+        <ul>
+          <li>知識整理、グラフ表示、添付管理、書き出し機能の提供。</li>
+          <li>OCR 出力、AI 要約、知識点草稿、編集可能な提案の生成。</li>
+          <li>同期、購読確認、決済関連状態確認、基本的な技術運用の実施。</li>
+          <li>障害解析、不正利用の抑止、製品の安定性と使いやすさの向上。</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>7. 保存、削除、および利用者の管理</h3>
+        <p>知識点、添付、知識ネットワークの削除やアプリ削除により、多くのローカルデータを消去できます。iCloud を通じて同期済みの情報は、削除反映までに時間を要する場合があります。取り込み・保存・処理したコンテンツの適法性および利用権限については、利用者自身が最終責任を負います。</p>
+      </section>
+
+      <section class="section">
+        <h3>8. 子ども、教育、研究利用</h3>
+        <p>学校、研究、業務、機関利用の場面では、教材、論文、画像、商品情報、その他文書の処理が、ライセンス、著作権、守秘義務、組織ポリシーに適合していることを確認してください。利用者が未成年の場合は、適用法に応じて保護者や機関による適切な管理が必要となることがあります。</p>
+      </section>
+
+      <section class="section">
+        <h3>9. お問い合わせ先</h3>
+        <p>本ポリシーに関するお問い合わせ先：<strong>eric1207cvb@msn.com</strong></p>
+      </section>
+
+      <section class="section">
+        <h3>10. 外部ポリシー参照</h3>
+        <ul>
+          <li><a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener noreferrer">OpenAI プライバシーポリシー</a></li>
+          <li><a href="https://openai.com/policies/terms-of-use/" target="_blank" rel="noopener noreferrer">OpenAI 利用規約</a></li>
+          <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Apple 標準 EULA</a></li>
+        </ul>
+      </section>
+
+    </article>
+
+    <footer>
+      <span id="footer-copy">CogniSphere Privacy Policy</span>
+    </footer>
+  </main>
+
+  <script>
+    const strings = {
+      "zh-Hant": {
+        subtitle: "正式三語隱私權政策",
+        introTitle: "<strong>正式版隱私權政策</strong><span>本頁說明 CogniSphere 對資料蒐集、處理、同步與 AI 功能使用的原則。</span>",
+        card1: "<strong>三語切換</strong><span>支援繁中、英文、美式英文、日本語手動切換。</span>",
+        card2: "<strong>自動偵測</strong><span>首次開啟會依瀏覽器語言自動選擇最接近的版本。</span>",
+        card3: "<strong>正式發佈前檢查</strong><span>請替換聯絡信箱與資料控制者資訊，確保和實際營運一致。</span>",
+        footer: "CogniSphere 隱私權政策"
+      },
+      en: {
+        subtitle: "Official Trilingual Privacy Policy",
+        introTitle: "<strong>Official privacy policy</strong><span>This page explains how CogniSphere handles data collection, processing, synchronization, and AI-assisted features.</span>",
+        card1: "<strong>Three-language switching</strong><span>Supports Traditional Chinese, US English, and Japanese with manual switching.</span>",
+        card2: "<strong>Automatic detection</strong><span>On first load, the page selects the closest language based on the browser locale.</span>",
+        card3: "<strong>Pre-publish checklist</strong><span>Replace the contact email and controller details so they match your actual operation.</span>",
+        footer: "CogniSphere Privacy Policy"
+      },
+      ja: {
+        subtitle: "正式な3言語対応プライバシーポリシー",
+        introTitle: "<strong>正式なプライバシーポリシー</strong><span>本ページでは、CogniSphere におけるデータ収集、処理、同期、および AI 機能の利用方針を説明します。</span>",
+        card1: "<strong>3言語切替</strong><span>繁体字中国語、英語、日本語を手動で切り替えできます。</span>",
+        card2: "<strong>自動判定</strong><span>初回表示時はブラウザの言語設定に最も近い表示を自動選択します。</span>",
+        card3: "<strong>公開前チェック</strong><span>連絡先メールとデータ管理者情報は、実運用に合わせて差し替えてください。</span>",
+        footer: "CogniSphere プライバシーポリシー"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-lang]");
+    const policies = document.querySelectorAll("[data-policy]");
+    const subtitle = document.getElementById("hero-subtitle");
+    const footer = document.getElementById("footer-copy");
+    const introTitle = document.querySelector("[data-copy='intro-title']");
+    const introCard1 = document.querySelector("[data-copy='intro-card-1']");
+    const introCard2 = document.querySelector("[data-copy='intro-card-2']");
+    const introCard3 = document.querySelector("[data-copy='intro-card-3']");
+
+    function resolveInitialLanguage() {
+      const saved = localStorage.getItem("cognisphere-privacy-lang");
+      if (saved && strings[saved]) return saved;
+
+      const language = (navigator.language || "").toLowerCase();
+      if (language.startsWith("ja")) return "ja";
+      if (language.startsWith("zh")) return "zh-Hant";
+      return "en";
+    }
+
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang === "zh-Hant" ? "zh-Hant" : lang;
+      localStorage.setItem("cognisphere-privacy-lang", lang);
+
+      buttons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      policies.forEach((policy) => {
+        policy.classList.toggle("active", policy.dataset.policy === lang);
+      });
+
+      subtitle.textContent = strings[lang].subtitle;
+      footer.textContent = strings[lang].footer;
+      introTitle.innerHTML = strings[lang].introTitle;
+      introCard1.innerHTML = strings[lang].card1;
+      introCard2.innerHTML = strings[lang].card2;
+      introCard3.innerHTML = strings[lang].card3;
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    });
+
+    applyLanguage(resolveInitialLanguage());
+  </script>
+</body>
+</html>
