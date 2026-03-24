@@ -118,26 +118,6 @@
       box-shadow: var(--shadow);
     }
 
-    .intro {
-      padding: 24px 24px 22px;
-      margin-top: 28px;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .pill {
-      padding: 14px 16px;
-      border-radius: 20px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(27, 109, 73, 0.12);
-    }
-
-    .pill strong,
     .section h3 {
       display: block;
       margin-bottom: 4px;
@@ -225,10 +205,6 @@
     }
 
     @media (max-width: 760px) {
-      .intro-grid {
-        grid-template-columns: 1fr;
-      }
-
       .hero-inner {
         align-items: flex-start;
       }
@@ -260,15 +236,6 @@
   </header>
 
   <main class="shell">
-    <section class="card intro">
-      <div data-copy="intro-title"></div>
-      <div class="intro-grid">
-        <div class="pill" data-copy="intro-card-1"></div>
-        <div class="pill" data-copy="intro-card-2"></div>
-        <div class="pill" data-copy="intro-card-3"></div>
-      </div>
-    </section>
-
     <article class="card policy" data-policy="zh-Hant">
       <div class="eyebrow">繁體中文</div>
       <h2>隱私權政策</h2>
@@ -503,26 +470,14 @@
     const strings = {
       "zh-Hant": {
         subtitle: "正式三語隱私權政策",
-        introTitle: "<strong>正式版隱私權政策</strong><span>本頁說明 CogniSphere 對資料蒐集、處理、同步與 AI 功能使用的原則。</span>",
-        card1: "<strong>三語切換</strong><span>支援繁中、英文、美式英文、日本語手動切換。</span>",
-        card2: "<strong>自動偵測</strong><span>首次開啟會依瀏覽器語言自動選擇最接近的版本。</span>",
-        card3: "<strong>正式發佈前檢查</strong><span>請替換聯絡信箱與資料控制者資訊，確保和實際營運一致。</span>",
         footer: "CogniSphere 隱私權政策"
       },
       en: {
         subtitle: "Official Trilingual Privacy Policy",
-        introTitle: "<strong>Official privacy policy</strong><span>This page explains how CogniSphere handles data collection, processing, synchronization, and AI-assisted features.</span>",
-        card1: "<strong>Three-language switching</strong><span>Supports Traditional Chinese, US English, and Japanese with manual switching.</span>",
-        card2: "<strong>Automatic detection</strong><span>On first load, the page selects the closest language based on the browser locale.</span>",
-        card3: "<strong>Pre-publish checklist</strong><span>Replace the contact email and controller details so they match your actual operation.</span>",
         footer: "CogniSphere Privacy Policy"
       },
       ja: {
         subtitle: "正式な3言語対応プライバシーポリシー",
-        introTitle: "<strong>正式なプライバシーポリシー</strong><span>本ページでは、CogniSphere におけるデータ収集、処理、同期、および AI 機能の利用方針を説明します。</span>",
-        card1: "<strong>3言語切替</strong><span>繁体字中国語、英語、日本語を手動で切り替えできます。</span>",
-        card2: "<strong>自動判定</strong><span>初回表示時はブラウザの言語設定に最も近い表示を自動選択します。</span>",
-        card3: "<strong>公開前チェック</strong><span>連絡先メールとデータ管理者情報は、実運用に合わせて差し替えてください。</span>",
         footer: "CogniSphere プライバシーポリシー"
       }
     };
@@ -531,10 +486,6 @@
     const policies = document.querySelectorAll("[data-policy]");
     const subtitle = document.getElementById("hero-subtitle");
     const footer = document.getElementById("footer-copy");
-    const introTitle = document.querySelector("[data-copy='intro-title']");
-    const introCard1 = document.querySelector("[data-copy='intro-card-1']");
-    const introCard2 = document.querySelector("[data-copy='intro-card-2']");
-    const introCard3 = document.querySelector("[data-copy='intro-card-3']");
 
     function resolveInitialLanguage() {
       const saved = localStorage.getItem("cognisphere-privacy-lang");
@@ -560,10 +511,6 @@
 
       subtitle.textContent = strings[lang].subtitle;
       footer.textContent = strings[lang].footer;
-      introTitle.innerHTML = strings[lang].introTitle;
-      introCard1.innerHTML = strings[lang].card1;
-      introCard2.innerHTML = strings[lang].card2;
-      introCard3.innerHTML = strings[lang].card3;
     }
 
     buttons.forEach((button) => {
