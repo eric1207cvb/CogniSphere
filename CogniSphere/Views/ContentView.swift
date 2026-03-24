@@ -224,7 +224,8 @@ struct ContentView: View {
                         }
                     },
                     onExport: exportLibrary,
-                    onArchiveCurrent: archiveCurrentKnowledgeLibrary
+                    onArchiveCurrent: archiveCurrentKnowledgeLibrary,
+                    onCreateShowcaseLibrary: createShowcaseLibrary
                 )
             }
             .sheet(item: $exportPackage) { package in
@@ -667,6 +668,27 @@ struct ContentView: View {
         }
     }
 
+    private func createShowcaseLibrary() {
+        guard persistenceDiagnostics.isPersistentStoreAvailable else {
+            importAlertMessage = persistenceDiagnostics.blockedMutationMessage(for: regionUI.region)
+            return
+        }
+        do {
+            try migrateLegacyNodesIfNeeded()
+            let createdLibrary = try ShowcaseLibrarySeedService.createShowcaseLibrary(
+                modelContext: modelContext,
+                libraryStore: libraryStore,
+                libraries: allLibraries,
+                nodes: allNodes,
+                region: regionUI.region
+            )
+            showLibrarySheet = false
+            importAlertMessage = localizedShowcaseLibraryCreatedMessage(createdLibrary.name)
+        } catch {
+            importAlertMessage = localizedShowcaseLibraryCreateFailure()
+        }
+    }
+
     private func migrateLegacyNodesIfNeeded() throws {
         guard let activeLibrary = libraryStore.activeLibrary else { return }
         let legacyNodes = allNodes.filter { node in
@@ -834,6 +856,28 @@ struct ContentView: View {
             return "No new knowledge entries were added."
         case .japan:
             return "新しい知識項目は追加されませんでした。"
+        }
+    }
+
+    private func localizedShowcaseLibraryCreatedMessage(_ name: String) -> String {
+        switch regionUI.region {
+        case .taiwan:
+            return "已建立示範知識庫：\(name)"
+        case .unitedStates:
+            return "Showcase library created: \(name)"
+        case .japan:
+            return "サンプルライブラリを作成しました：\(name)"
+        }
+    }
+
+    private func localizedShowcaseLibraryCreateFailure() -> String {
+        switch regionUI.region {
+        case .taiwan:
+            return "建立示範知識庫失敗，請再試一次。"
+        case .unitedStates:
+            return "Failed to create the showcase library. Please try again."
+        case .japan:
+            return "サンプルライブラリの作成に失敗しました。もう一度お試しください。"
         }
     }
 

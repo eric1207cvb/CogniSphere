@@ -225,6 +225,35 @@ enum AttachmentStorageController {
         )
     }
 
+    static func storeGeneratedFile(
+        data: Data,
+        preferredFileName: String,
+        explicitMimeType: String? = nil
+    ) throws -> StoredAttachment {
+        let trimmedOriginalName = preferredFileName.trimmingCharacters(in: .whitespacesAndNewlines)
+        let originalFileName = trimmedOriginalName.isEmpty ? UUID().uuidString : trimmedOriginalName
+        let resolvedMimeType = explicitMimeType ?? mimeType(forFileName: originalFileName)
+        let fileSize = Int64(data.count)
+
+        if resolvedMimeType == "application/pdf" || originalFileName.lowercased().hasSuffix(".pdf") {
+            if fileSize > maxPDFBytes {
+                throw AttachmentStorageError.fileTooLarge(kind: RegionUIStore.runtimeCopy().importPDF, limitBytes: maxPDFBytes)
+            }
+        }
+
+        try ensureCapacity(forAdditionalBytes: fileSize)
+
+        let storedFileName = UUID().uuidString + "_" + originalFileName
+        let destinationURL = localFileURL(for: storedFileName)
+        try data.write(to: destinationURL, options: .atomic)
+        return StoredAttachment(
+            fileName: storedFileName,
+            originalFileName: originalFileName,
+            mimeType: resolvedMimeType,
+            data: data
+        )
+    }
+
     static func restoredLocalFileURL(for reference: KnowledgeReference) -> URL? {
         guard let fileName = reference.attachmentLocalFileName else { return nil }
         let fileURL = localFileURL(for: fileName)
